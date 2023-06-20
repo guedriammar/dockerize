@@ -1,0 +1,20 @@
+version: "2.1"
+services:
+ app:
+  build: .
+  container_name: appnode
+  restart: always
+  ports:
+   - 3005:3005
+  
+ mongo:
+  image: "mongo:4.2.2"
+  container_name: "mongo"
+  environment:
+    MONGO_INITDB_DATABASE: user
+  ports:
+      - "27017:27017"
+      - "27019:27019"
+
+
+  
