@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t newimage dockerize/' 
+        sh 'docker build -t guedriammar/newimage .' 
       }
     }
     stage('Login') {
@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push newimage' 
+        sh 'docker push guedriammar/newimage' 
       }
     }
   }
